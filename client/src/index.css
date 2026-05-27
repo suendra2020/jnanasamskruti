@@ -1,0 +1,394 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  /* Premium School Color Palette */
+  --primary-navy: #1a365d;
+  --primary-blue: #2563eb;
+  --gold-accent: #d4af37;
+  --gold-light: #e5c158;
+  --white: #ffffff;
+  --soft-bg: #f8fafc;
+  --dark-text: #1e293b;
+  --gray-text: #64748b;
+  
+  --primary: var(--primary-blue);
+  --primary-foreground: var(--white);
+  --sidebar-primary: var(--primary-blue);
+  --sidebar-primary-foreground: var(--white);
+  --chart-1: var(--primary-blue);
+  --chart-2: #0ea5e9;
+  --chart-3: #06b6d4;
+  --chart-4: #10b981;
+  --chart-5: #f59e0b;
+  --radius: 0.65rem;
+  --background: var(--white);
+  --foreground: var(--dark-text);
+  --card: var(--white);
+  --card-foreground: var(--dark-text);
+  --popover: var(--white);
+  --popover-foreground: var(--dark-text);
+  --secondary: #f0f4f8;
+  --secondary-foreground: var(--dark-text);
+  --muted: #e2e8f0;
+  --muted-foreground: var(--gray-text);
+  --accent: var(--gold-accent);
+  --accent-foreground: var(--primary-navy);
+  --destructive: #ef4444;
+  --destructive-foreground: var(--white);
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: var(--primary-blue);
+  --sidebar: var(--white);
+  --sidebar-foreground: var(--dark-text);
+  --sidebar-accent: var(--gold-accent);
+  --sidebar-accent-foreground: var(--primary-navy);
+  --sidebar-border: #e2e8f0;
+  --sidebar-ring: var(--primary-blue);
+}
+
+.dark {
+  --background: #0f172a;
+  --foreground: #f1f5f9;
+  --card: #1e293b;
+  --card-foreground: #f1f5f9;
+  --popover: #1e293b;
+  --popover-foreground: #f1f5f9;
+  --secondary: #1e293b;
+  --secondary-foreground: #cbd5e1;
+  --muted: #334155;
+  --muted-foreground: #94a3b8;
+  --accent: var(--gold-accent);
+  --accent-foreground: var(--primary-navy);
+  --destructive: #f87171;
+  --destructive-foreground: #0f172a;
+  --border: #334155;
+  --input: #334155;
+  --ring: var(--primary-blue);
+  --sidebar: #1e293b;
+  --sidebar-foreground: #f1f5f9;
+  --sidebar-accent: var(--gold-accent);
+  --sidebar-accent-foreground: var(--primary-navy);
+  --sidebar-border: #334155;
+  --sidebar-ring: var(--primary-blue);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    @apply font-bold;
+  }
+  
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1280px;
+    }
+    .jnn-logo{
+  width: 90px;
+    position: relative;
+    height: 85px;
+    top: 11px;
+}
+  }
+
+  /* Premium Typography */
+  .text-display-lg {
+    @apply text-5xl md:text-6xl font-bold leading-tight;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .text-display-md {
+    @apply text-4xl md:text-5xl font-bold leading-tight;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .text-display-sm {
+    @apply text-3xl md:text-4xl font-bold leading-tight;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .text-heading-lg {
+    @apply text-2xl md:text-3xl font-bold;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .text-heading-md {
+    @apply text-xl md:text-2xl font-semibold;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .text-heading-sm {
+    @apply text-lg md:text-xl font-semibold;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  /* Gradient Utilities */
+  .gradient-primary {
+    @apply bg-gradient-to-r from-[#1a365d] to-[#2563eb];
+  }
+
+  .gradient-gold {
+    @apply bg-gradient-to-r from-[#d4af37] to-[#e5c158];
+  }
+
+  .gradient-overlay {
+    @apply bg-gradient-to-b from-[rgba(26,54,93,0.7)] to-[rgba(37,99,235,0.7)];
+  }
+
+  /* Premium Shadows - using standard Tailwind */
+  .shadow-premium {
+    @apply shadow-lg;
+  }
+
+  .shadow-premium-lg {
+    @apply shadow-2xl;
+  }
+
+  /* Glassmorphism */
+  .glass {
+    @apply bg-white/80 backdrop-blur-md border border-white/20;
+  }
+
+  .glass-dark {
+    @apply bg-slate-900/80 backdrop-blur-md border border-white/10;
+  }
+
+  /* Hover Lift Effect */
+  .hover-lift {
+    @apply transition-all duration-300 ease-out hover:shadow-2xl hover:-translate-y-1;
+  }
+
+  /* Scroll Progress */
+  .scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #1a365d, #2563eb, #d4af37);
+    z-index: 9999;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+  }
+}
+
+@layer utilities {
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  .animate-fade-in-left {
+    animation: fadeInLeft 0.6s ease-out;
+  }
+
+  .animate-fade-in-right {
+    animation: fadeInRight 0.6s ease-out;
+  }
+
+  .animate-zoom-in {
+    animation: zoomIn 0.6s ease-out;
+  }
+
+  .animate-slide-down {
+    animation: slideDown 0.3s ease-out;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite;
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-blue);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-navy);
+}
+.jnn-logo{
+width: 124px;
+    position: relative;
+    height: 124px;
+    top: 30px;
+    background: #fff;
+    border-radius: 20%;
+}
+
+
+body {
+  overflow-x: hidden;
+}
+.min-h-screen{
+    overflow-x: hidden;
+}
