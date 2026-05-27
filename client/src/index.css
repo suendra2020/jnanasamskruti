@@ -392,3 +392,6 @@ body {
 .min-h-screen{
     overflow-x: hidden;
 }
+.bg-img{
+  background-size: cover;
+}

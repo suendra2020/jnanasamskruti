@@ -204,8 +204,8 @@ export default function Home() {
             key={index}
             initial={{ opacity: 0, scale: 1.05 }}
             animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1 }}
+            exit={{ opacity: 1 }}
+            transition={{ duration: 0.0 }}
             className=" inset-0"
           >
             {/* BACKGROUND IMAGE */}
@@ -303,7 +303,7 @@ export default function Home() {
                         transition={{
                           duration: 0.8,
                         }}
-                        className="relative z-10 w-full h-[320px] sm:h-[420px] lg:h-[520px] object-cover rounded-[30px] shadow-[0_20px_80px_rgba(0,0,0,0.4)] border border-white/20"
+                        className="relative z-10 w-full h-[320px] sm:h-[420px] lg:h-[520px] object-cover rounded-[30px] shadow-[0_20px_80px_rgba(0,0,0,0.4)] border border-white/20 bg-img"
                       />
                     </AnimatePresence>
 
