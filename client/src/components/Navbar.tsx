@@ -45,7 +45,7 @@ export default function Navbar() {
           <Link href="/">
             <a className="flex items-center gap-3">
               <img
-                src="https://i.ibb.co/0RjpHVcP/logo-jnn.png"
+                src="https://i.ibb.co/TMbW3YdQ/logo-jnn.png"
                 alt="Logo"
                 className="jnn-logo w-14 h-14 object-cover rounded-xl shadow-md"
               />
