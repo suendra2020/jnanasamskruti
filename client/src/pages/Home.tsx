@@ -71,7 +71,7 @@ export default function Home() {
   // RIGHT SIDE IMAGE CAROUSEL
   const rightImages = [
     "https://i.ibb.co/PGrQw361/jnn4.png",
-    " https://i.ibb.co/5W5nTcgP/Chat-GPT-Image-May-27-2026-02-38-24-PM.png",
+    "https://i.ibb.co/TMbW3YdQ/logo-jnn.png",
     "https://i.ibb.co/0yJ6C8zm/Chat-GPT-Image-May-27-2026-01-09-00-PM.png",
     "https://i.ibb.co/YBk5Z89g/Chat-GPT-Image-May-27-2026-02-30-53-PM.png",
     "https://i.ibb.co/LXLYTH3D/jnn14.png",
